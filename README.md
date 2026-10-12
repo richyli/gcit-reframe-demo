@@ -72,10 +72,10 @@ A skill set can carry you from a question to an idea in one go. It cannot know w
 
 ## A second skill: the systems loop
 
-[`/systems-loop`](.claude/skills/systems-loop/SKILL.md) packs steps 1–9 of the social-problems guide (prompts [12](prompts/12-intervention-lister.md), [13](prompts/13-link-lister.md), [14](prompts/14-intervention-drafter.md)) into one skill. Give it one phenomenon:
+[`/systems-loop`](.claude/skills/systems-loop/SKILL.md) packs steps 1–9 of the social-problems guide (prompts [12](prompts/12-intervention-lister.md), [13](prompts/13-link-lister.md), [14](prompts/14-intervention-drafter.md)) into one fully automatic skill. Give it one phenomenon:
 
 ```
 /systems-loop Stray dogs keep coming back to our campus after every round-up
 ```
 
-It sorts what has been tried on the five-step ladder (numbers, rules, information, structure, goals), checks every link's sign against a fact, finds two loops and one delay, and ends with one causal loop diagram (Mermaid) with three intervention points on three different steps. The signs, the R/B count and the strongest point are yours; in autopilot they come back marked `[AI judged]`.
+It sorts what has been tried on the five-step ladder (numbers, rules, information, structure, goals), checks every link's sign against a fact, finds two loops and one delay, and ends with one causal loop diagram (Mermaid) with three intervention points on three different steps. It has no human steps: it never stops to ask, and the sign check runs in a fresh agent so the lister cannot defend its own arrows. Facts it could not point to come back under **Facts to check**.
