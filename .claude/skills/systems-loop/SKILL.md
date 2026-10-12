@@ -85,20 +85,20 @@ First pick the three steps (the top one at least as high as step 4's step up). T
 Draw one Mermaid `flowchart LR` from the **kept** links of step 7, the loops and delay of step 8, and the points of step 9. Nothing crossed out goes in. Use these conventions:
 
 - each variable is a node `V1["Variable name"]`;
-- each kept link is `A -->|"+"| B` or `A -->|"−"| B`;
-- the delay arrow is dotted and carries its time: `A -.->|"− ‖ ~6 months"| B`;
+- each kept link is `A -->|"(+)"| B` or `A -->|"(−)"| B` (keep the brackets: a bare `"+"` or `"−"` label is read as a Markdown list and breaks);
+- the delay arrow is dotted and carries its time: `A -.->|"(−) ‖ ~6 months"| B`;
 - each loop gets a round label node, `R1(("R1 · feeds itself"))` or `B1(("B1 · corrects itself"))`, linked with `~~~` to one variable in that loop;
 - each intervention point is a node `IP1[["IP1 · step · what it changes"]]` with class `ip`; the strongest also has class `strong`, a ★ and `pushback: …`;
   - **push a variable:** `IP1 -.-> V3`;
   - **cut an arrow:** `IP2 -.->|"cuts V2 → V4"| V4`;
-  - **add a path:** draw the new link thick, `V5 ==>|"+ new path (IP3)"| V1`, and `IP3 -.-> V5`.
+  - **add a path:** draw the new link thick, `V5 ==>|"(+) new path (IP3)"| V1`, and `IP3 -.-> V5`.
 
 ```mermaid
 flowchart LR
-  V1["Variable A"] -->|"+"| V2["Variable B"]
-  V2 -->|"+"| V1
-  V2 -->|"+"| V3["Variable C"]
-  V3 -.->|"− ‖ ~6 months"| V1
+  V1["Variable A"] -->|"(+)"| V2["Variable B"]
+  V2 -->|"(+)"| V1
+  V2 -->|"(+)"| V3["Variable C"]
+  V3 -.->|"(−) ‖ ~6 months"| V1
   R1(("R1 · feeds itself")) ~~~ V1
   B1(("B1 · corrects itself")) ~~~ V3
   IP1[["IP1 · numbers · …"]]:::ip -.-> V2
